@@ -1,0 +1,51 @@
+
+<div id="infocard" class="row" *ngIf="_selectedMartialArt!=null">
+
+  <div class="col-md-3 text-center">
+    <img id='card-pic' class="rounded" src='{{imgPath}}{{_selectedMartialArt.name | lowercase}}-img.jpg' alt='{{_selectedMartialArt.name}} picture' (change)="console.log('volia')"/>
+  </div>
+
+  <div class="col-md-9">
+
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#info">Info</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#description">Description</a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#history">History</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <!--<h5 class="card-title">{{_selectedMartialArt.name}}</h5>
+      <p class="card-text">{{_selectedMartialArt.description}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+      <div id="myTabContent" class="tab-content">
+        <div class="float-left tab-pane fade active show" id="info">
+              <h2 class="card-title">{{_selectedMartialArt.name}}</h2>
+              <ul>
+                <li><p>Specialty: {{_selectedMartialArt.specialty}}</p></li>
+                <li><p>Equipment: {{_selectedMartialArt.equipment}}</p></li>
+                <li><p>Competition Type: {{_selectedMartialArt.competition_type}}</p></li>
+                <li><p>Origin Country: {{_selectedMartialArt.origin_country}}</p></li>
+                <li><p>Foundation year: {{_selectedMartialArt.foundation_year}}</p></li>
+              </ul>         
+        </div>
+        <div class="tab-pane fade" id="description">
+          <p>{{_selectedMartialArt.description}}</p>
+        </div>
+        <div class="tab-pane fade" id="history">
+          <p>{{_selectedMartialArt.history}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+</div>
